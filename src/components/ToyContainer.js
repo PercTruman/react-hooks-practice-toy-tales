@@ -1,9 +1,18 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer() {
+function ToyContainer({toyList}) {
+
+  const originalToyCards=toyList.map(toy=>
+    <ToyCard 
+        name={toy.name}
+        image={toy.image}
+        likes={toy.likes}
+        />
+        )
+  
   return (
-    <div id="toy-collection">{/* Render the collection of ToyCards */}</div>
+    <div id="toy-collection">{originalToyCards}</div>
   );
 }
 
