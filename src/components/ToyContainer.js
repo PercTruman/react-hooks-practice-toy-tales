@@ -5,6 +5,7 @@ function ToyContainer({toyList}) {
 
   const originalToyCards=toyList.map(toy=>
     <ToyCard 
+        key={toy.id}
         name={toy.name}
         image={toy.image}
         likes={toy.likes}

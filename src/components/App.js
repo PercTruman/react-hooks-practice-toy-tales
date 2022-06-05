@@ -8,6 +8,7 @@ import ToyContainer from "./ToyContainer";
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [toyList, setToyList]=useState([]);
+  
 
   useEffect(() => {
     fetch('http://localhost:3001/toys')
@@ -19,10 +20,15 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
 
+  function handleAddToy(newToy){
+    const updatedToyList = [...toyList, newToy]
+    setToyList(updatedToyList)
+  }
+
   return (
     <>
       <Header />
-      {showForm ? <ToyForm /> : null}
+      {showForm ? <ToyForm handleAddToy={handleAddToy}/> : null}
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
