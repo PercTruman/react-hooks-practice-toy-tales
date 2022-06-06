@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 8
+      "likes": 12
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 14
+      "likes": 15
     },
     {
       "id": 3,
@@ -47,25 +47,6 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
-    },
-    {
-      "toyName": {
-        "toyName": "Shawn Hart"
-      },
-      "toyImage": {
-        "toyImage": "https://images.unsplash.com/photo-1635163236960-c068148bd61a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8aFNQNkp4OHc0WjR8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60"
-      },
-      "id": 9
-    },
-    {
-      "toyName": "Shawn Hart",
-      "toyImage": "https://images.unsplash.com/photo-1635163236960-c068148bd61a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8aFNQNkp4OHc0WjR8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
-      "id": 10
-    },
-    {
-      "name": "Shawn Hart",
-      "image": "https://images.unsplash.com/photo-1635163236960-c068148bd61a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDF8aFNQNkp4OHc0WjR8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=60",
-      "id": 11
     }
   ]
 }

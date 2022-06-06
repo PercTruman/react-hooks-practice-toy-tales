@@ -1,15 +1,17 @@
+import { id } from "date-fns/locale";
 import React, { useState } from "react";
 
 function ToyForm({ handleAddToy }) {
   const [toyName, setToyName] = useState("");
   const [toyImage, setToyImage] = useState("");
 
-
-
   function handleSubmit() {
     const newToyForm = {
-      name:  toyName,
-      image:  toyImage,
+      key: id,
+      id: id,
+      name: toyName,
+      image: toyImage,
+      likes: 0
     };
 
     fetch("http://localhost:3001/toys", {
@@ -17,10 +19,10 @@ function ToyForm({ handleAddToy }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newToyForm)
+      body: JSON.stringify(newToyForm),
     })
       .then((res) => res.json())
-      .then((addedToy) => console.log(addedToy));
+      .then((addedToy) => handleAddToy(addedToy));
   }
 
   return (

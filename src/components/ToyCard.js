@@ -1,6 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
 
-function ToyCard({name, image, likes}) {
+function ToyCard({id, name, image, likes, onHandleDelete}) {
+  const [newLikes, setNewLikes] = useState(likes)
+
+  function addLike(id, likes) {
+    fetch(`http://localhost:3001/toys/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ 'likes':likes + 1}),
+    })
+      .then((res) => res.json())
+      .then((newLikesTotal) => setNewLikes(newLikesTotal));
+  }
+
+  function handleClick(){
+   onHandleDelete(id)
+  }
+
   return (
     <div className="card">
       <h2>{name}</h2>
@@ -9,9 +27,9 @@ function ToyCard({name, image, likes}) {
         alt={name}
         className="toy-avatar"
       />
-      <p>{likes} Likes </p>
-      <button className="like-btn">Like {"<3"}</button>
-      <button className="del-btn">Donate to GoodWill</button>
+      <p>{newLikes} Likes </p>
+      <button className="like-btn" onClick={addLike}>Like {"<3"}</button>
+      <button className="del-btn" onClick={handleClick}>Donate to GoodWill</button>
     </div>
   );
 }
