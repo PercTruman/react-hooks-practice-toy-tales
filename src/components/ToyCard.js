@@ -1,19 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 function ToyCard({id, name, image, likes, onHandleDelete}) {
-  const [newLikes, setNewLikes] = useState(likes)
+  const [newLikes, setNewLikes] = useState(likes);
 
-  function addLike(id, likes) {
-    fetch(`http://localhost:3001/toys/${id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ 'likes':likes + 1}),
-    })
-      .then((res) => res.json())
-      .then((newLikesTotal) => setNewLikes(newLikesTotal));
+  function addLike() {
+    setNewLikes((likes)=>likes + 1)
   }
+
+    useEffect(()=>{
+      fetch(`http://localhost:3001/toys/${id}`,
+      {
+       method: "PATCH",
+       headers:{
+         "Content-Type": "application/json"
+       },
+       body: JSON.stringify({ 'likes': newLikes})
+     })
+   }, [id, newLikes] )
+
 
   function handleClick(){
    onHandleDelete(id)
